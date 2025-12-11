@@ -20,7 +20,7 @@
 ;; = H = Shorthand for the hyper (fn-key)
 ;; = A = Shorthand for the alt-key
 ;; = s = Shorthand for the super-key
-;;
+;; Each SYMBOL is control, meta, alt, super, hyper or none.
 ;;; Code:
 
 
@@ -45,9 +45,21 @@
 
    mac-right-command-modifier 'super
    mac-right-option-modifier 'none
-   mac-right-control-modifier 'meta
+   mac-right-control-modifier 'meta))
 
+(when (eq system-type 'gnu/linux)
+  (setq
+
+   ns-function-modifier 'hyper
+
+   ns-control-modifier 'alt
+   ns-option-modifier 'none
+   ns-command-modifier 'control
+   ;; ns-right-command-modifier 'none
+   ;; ns-right-option-modifier 'none
+   ;; ns-right-control-modifier 'none
    ))
+
 
 (provide 'four-modifier)
 ;;; four-modifier.el ends here
